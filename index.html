@@ -1,0 +1,108 @@
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <img src="NashLogo.png"  class="logo">
+        <span class="store-name jump-title">Nash Beauty Store</span>
+      </div>
+      <nav class="navbar-right">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/products">Products</a>
+        <a href="/order">Order Now</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+  
+    <!-- Page Content -->
+    <main>
+      <h1>Welcome to the official Nash Beauty Store website</h1>
+      <p>Where you can look great while spending less</p>
+      <section class="hero-logo">
+        <div id="logoWrapper" class="logo-wrapper">
+          <img id="mainLogo" src="NashLogo.png" alt="Nash Logo" />
+        </div>
+      </section>
+            
+      <div class="button-row">
+        <a href="products.html" class="products-button">Explore our Products</a>
+        <a href="order.html" class="order-button">Want School Uniforms?</a>
+      </div>      
+      
+    </main>
+    <script>
+      const container = document.getElementById("logoPuzzle");
+      const logoImg = container.querySelector("img");
+      const wrapper = document.getElementById("logoWrapper");
+      const src = logoImg.src;
+    
+      container.addEventListener("click", () => {
+        container.classList.remove("idleBounce");
+        logoImg.style.display = "none";
+    
+        // Reserve layout space
+        wrapper.style.minHeight = "0px";
+    
+        const size = 75;
+        const pieces = [];
+    
+        for (let y = 0; y < 4; y++) {
+          for (let x = 0; x < 4; x++) {
+            const piece = document.createElement("div");
+            piece.classList.add("puzzle-piece");
+            piece.style.width = `${size}px`;
+            piece.style.height = `${size}px`;
+            piece.style.left = `${x * size}px`;
+            piece.style.top = `${y * size}px`;
+            piece.style.backgroundImage = `url(${src})`;
+            piece.style.backgroundPosition = `-${x * size}px -${y * size}px`;
+            container.appendChild(piece);
+            pieces.push(piece);
+          }
+        }
+    
+        // Shatter animation
+        setTimeout(() => {
+          pieces.forEach(piece => {
+            const angle = Math.random() * 360;
+            const x = (Math.random() - 0.5) * 500;
+            const y = (Math.random() - 0.5) * 500;
+            piece.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg)`;
+            piece.style.opacity = 0;
+          });
+        }, 100);
+    
+        // Reform pieces
+        setTimeout(() => {
+          pieces.forEach(piece => {
+            piece.style.transform = `translate(0, 0) rotate(0deg)`;
+            piece.style.opacity = 1;
+          });
+        }, 1600);
+    
+        // Restore original logo and space
+        setTimeout(() => {
+          pieces.forEach(p => p.remove());
+          logoImg.style.display = "block";
+          container.classList.add("idleBounce");
+          wrapper.style.minHeight = "300px"; // restores spacing instantly
+        }, 2800);
+      });
+    </script>
+    
+    
+        <section class="map-section">
+          <h2>Locate Us</h2>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.342767580377!2d-80.18940418969576!3d25.891100203152597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b2021cd543ed%3A0x5329dd534554369b!2s12580%20NE%206th%20Ave%2C%20North%20Miami%2C%20FL%2033161!5e0!3m2!1sen!2sus!4v1749576029392!5m2!1sen!2sus" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+        </section>
+   
+  </body>
+  <link rel="stylesheet" href="style.css">
+
+  

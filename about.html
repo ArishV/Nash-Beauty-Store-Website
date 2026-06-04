@@ -1,0 +1,74 @@
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <img src="NashLogo.png"  class="logo">
+        <span class="store-name jump-title">Nash Beauty Store</span>
+      </div>
+      <nav class="navbar-right">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/products">Products</a>
+        <a href="/order">Order Now</a>
+        <a href="/contact">Contact</a>
+      </nav>
+
+    </header>
+  
+    <!-- Page Content -->
+    <main>
+      <h1>About Page</h1>
+      <p>Learn about Nash Beauty Store and its owners</p>
+      <section class="about-owners">
+        <div class="owners-carousel">
+          <button class="prev">&#10094;</button>
+          <div class="carousel-track" id="owners-carousel">
+            <img src="/images/owners/owner1.jpg" alt="Navroz Valliani">
+            <img src="/images/owners/owner2.jpg" alt="Mohsin Valliani">
+          </div>
+          <button class="next">&#10095;</button>
+        </div>
+      
+        <div class="owners-text">
+          <h2>Meet the Founders</h2>
+          <p>
+         
+Navroz Valliani, one of the owners of Nash Beauty Store, has always had the spirit of an entrepreneur. His journey started all the way back in Pakistan, where he used to sell Bun Kebab's with a smile and a hustle that hasn’t changed to this day. 
+</p>
+<p>
+In 2002, he opened Nash Discount Inc: a local convenience store that became a go-to spot for the community. After over two successful decades, he saw an opportunity in 2025 to start fresh in a new location and bring a more modern twist to the business. 
+</p>
+<p>
+That vision, which he now shares with his son, Mohsin Valliani, became Nash Beauty Store: a fresh, vibrant space built on years of experience, hard work, and a genuine love for serving people.
+</p>
+          </p>
+        </div>
+      </section>
+      <script>
+        function setupAboutCarousel(trackId) {
+          const track = document.getElementById(trackId);
+          const prevBtn = track.previousElementSibling;
+          const nextBtn = track.nextElementSibling;
+          const slides = track.children;
+          let index = 0;
+      
+          function updateCarousel() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+          }
+      
+          nextBtn.addEventListener('click', () => {
+            index = (index + 1) % slides.length;
+            updateCarousel();
+          });
+      
+          prevBtn.addEventListener('click', () => {
+            index = (index - 1 + slides.length) % slides.length;
+            updateCarousel();
+          });
+        }
+      
+        setupAboutCarousel('owners-carousel');
+      </script>  
+    </main>
+
+  <link rel="stylesheet" href="style.css">

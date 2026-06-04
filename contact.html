@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Nash Beauty Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="NashLogo.png"  class="logo">
+      <span class="store-name jump-title">Nash Beauty Store</span>
+    </div>
+    <nav class="navbar-right">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/products">Products</a>
+      <a href="/order">Order Now</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <div class="contact-wrapper">
+      <div class="contact-left">
+        <section class="contact-details">
+          <h2>Contact Us</h2>
+          <p><strong>📍 Location:</strong><br>12580 NE 6th AVE, North Miami, FL 33161</p>
+          <p><strong>📧 Email:</strong><br>NashVarietyStore@gmail.com</p>
+          <p><strong>☎️ Call:</strong><br>(305) 586-1566</p>
+          <p><strong>Hours of Operation:</strong><br>Monday - Sunday<br>8am to 8pm</p>
+        </section>
+
+        <section class="social-icons-horizontal">
+          <a href="https://www.facebook.com/share/1AwLfiarra/?mibextid=wwXIfr" target="_blank" class="social-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/nashbeautystore?igsh=aWdrdnBnamd4bmN5&utm_source=qr" target="_blank" class="social-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          </a>
+        </section>
+      </div>
+
+      <section class="contact-form contact-form-vertical contact-right">
+        <form action="/contact" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required>
+        
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option disabled selected>Select a subject</option>
+            <option>Product Inquiry</option>
+            <option>Store Feedback</option>
+            <option>General Question</option>
+            <option>Other</option>
+          </select>
+        
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        
+          <button type="submit">SEND MESSAGE</button>
+        </form>        
+      </section>
+    </div>
+  </main>
+</body>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("status") === "success") {
+    alert("✅ Message sent successfully!");
+  } else if (params.get("status") === "error") {
+    alert("❌ There was a problem sending your message. Please try again.");
+  }
+</script>
+
+</html>
