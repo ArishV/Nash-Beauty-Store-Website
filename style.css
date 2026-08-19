@@ -73,7 +73,7 @@ p {
   z-index: 1000;
 
   height: 82px;
-  padding: 0 0px;
+  padding: 0 2px;
 
   background: rgba(8, 11, 18, 0.88);
   backdrop-filter: blur(18px);
