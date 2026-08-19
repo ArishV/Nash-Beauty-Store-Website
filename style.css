@@ -276,9 +276,9 @@ p {
 .social-btn img {
   width: 42px;
   height: 42px;
-  border-radius: 3px;
+  border-radius: 12px;
   background: #ffffff;
-  padding: 6px;
+  padding: 2px;
 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
