@@ -84,13 +84,13 @@ p {
 
 .navbar-left {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 12px;
 }
 
 .logo {
-  width: 65px;
-  height: 65px;
+  width: 75px;
+  height: 75px;
   object-fit: contain;
 }
 
